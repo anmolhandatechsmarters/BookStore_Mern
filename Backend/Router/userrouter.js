@@ -1,6 +1,11 @@
-const express=require("express")
-const router=express.Router()
+const express = require("express");
+const router = express.Router();
 
-router.get("/user")
+// Import the GetUserData controller function
+const { GetUserData } = require("../Controller/user");
 
-module.exports=router
+// Define the route for getting all users
+router.get("/getalluser", GetUserData);
+
+// Export the router
+module.exports = router;
