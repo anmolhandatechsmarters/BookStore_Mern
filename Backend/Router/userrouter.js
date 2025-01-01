@@ -1,11 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const {  InsertData, LoginUser } = require("../Controller/user");
 
-// Import the GetUserData controller function
-const { GetUserData } = require("../Controller/user");
-
-// Define the route for getting all users
-router.get("/getalluser", GetUserData);
-
-// Export the router
+router.post("/submitUser",InsertData)
+router.post("/loginuser",LoginUser)
 module.exports = router;

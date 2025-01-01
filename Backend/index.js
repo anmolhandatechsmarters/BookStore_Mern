@@ -4,21 +4,13 @@ const cors=require("cors")
 require("dotenv").config()
 const BodyParser=require("body-parser")
 const dbconnect=require("./connection")
-
-
-//Get All the Router
 const UserRouter=require("./Router/userrouter")
-
-
-
-
-//End Get router
-
-
 const PORT=process.env.PORT
-app.use(cors())
-dbconnect()
 
+app.use(cors())
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+dbconnect()
 app.use("/api/user",UserRouter);
 
 
