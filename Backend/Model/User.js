@@ -28,6 +28,9 @@ const UserSchema = new mongoose.Schema(
       ref: "Role",
       default: null,
     },
+    token:{
+      type:String,
+    },
     active: {
       type: String,
       enum: ["active", "inactive"],
